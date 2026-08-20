@@ -3,8 +3,9 @@
     "name": "thecodechef/laravel-paper-yaml-driver",
     "description": "A YAML Driver for Laravel Paper",
     "keywords": [
-        "laravel",
         "thecodechef",
+        "laravel",
+        "laravel-paper",
         "laravel-paper-yaml-driver"
     ],
     "homepage": "https://github.com/thecodechef/laravel-paper-yaml-driver",
@@ -17,18 +18,21 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.5",
         "illuminate/support": "^12.0||^13.0"
     },
     "require-dev": {
+        "jacobjoergensen/laravel-paper": "^1.15",
         "larastan/larastan": "^3.9",
-        "laravel/pint": "^1.29",
         "laravel/pao": "^1.0",
+        "laravel/pint": "^1.29",
         "orchestra/testbench": "^10.0||^11.0",
         "pestphp/pest": "^4.6||^5.0",
         "pestphp/pest-plugin-laravel": "^4.1||^5.0",
         "pestphp/pest-plugin-type-coverage": "^4.0||^5.0",
-        "phpstan/extension-installer": "^1.4"
+        "phpstan/extension-installer": "^1.4",
+        "rector/rector": "^2.6",
+        "symfony/yaml": "^8.1"
     },
     "autoload": {
         "psr-4": {
