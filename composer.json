@@ -48,7 +48,7 @@
     },
     "scripts": {
         "post-autoload-dump": [
-          "@test",
+          "@test"
         ],
         "lint": [
             "vendor/bin/pint --parallel"
