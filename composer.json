@@ -2,14 +2,13 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "thecodechef/laravel-paper-yaml-driver",
     "description": "A YAML Driver for Laravel Paper",
+    "license": "MIT",
     "keywords": [
         "thecodechef",
         "laravel",
         "laravel-paper",
         "laravel-paper-yaml-driver"
     ],
-    "homepage": "https://github.com/thecodechef/laravel-paper-yaml-driver",
-    "license": "MIT",
     "authors": [
         {
             "name": "Jeremy Bolding",
@@ -17,6 +16,11 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/thecodechef/laravel-paper-yaml-driver",
+    "support": {
+        "issues": "https://github.com/thecodechef/laravel-paper-yaml-driver/issues",
+        "source": "https://github.com/thecodechef/laravel-paper-yaml-driver"
+    },
     "require": {
         "php": "^8.4||^8.5",
         "illuminate/support": "^12.0||^13.0"
