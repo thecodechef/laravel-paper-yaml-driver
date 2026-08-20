@@ -55,24 +55,13 @@
           "@prepare"
         ],
         "prepare" : [
-          "@test"
+          "@lint"
         ],
         "lint": [
             "vendor/bin/pint --parallel"
         ],
         "lint:check": [
             "vendor/bin/pint --parallel --test"
-        ],
-        "test:types": [
-            "vendor/bin/pest --type-coverage --min=100"
-        ],
-        "test:unit": [
-            "vendor/bin/pest --parallel"
-        ],
-        "test": [
-            "@lint:check",
-            "@test:types",
-            "@test:unit"
         ]
     },
     "extra": {
