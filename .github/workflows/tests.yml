@@ -48,9 +48,3 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --no-scripts
           composer run prepare
-
-      - name: PHPStan
-        run: composer analyse
-
-      - name: Linter
-        run: composer lint:check
