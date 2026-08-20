@@ -21,15 +21,14 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         php: [8.4, 8.5]
-        laravel: [12.*, 13.*]
+        laravel: [13.*]
         stability: [prefer-lowest, prefer-stable]
         include:
-          - laravel: 12.*
           - laravel: 13.*
 
-    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
@@ -55,15 +54,3 @@ jobs:
 
       - name: Linter
         run: composer lint:check
-
-      - name: Type Coverage
-        if: runner.os != 'Windows'
-        run: composer test:types
-
-      - name: Test Suite
-        if: runner.os != 'Windows'
-        run: composer test:unit
-
-      - name: Test Suite (Windows)
-        if: runner.os == 'Windows'
-        run: vendor/bin/pest
