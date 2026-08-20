@@ -6,7 +6,7 @@ namespace LaravelPaperYamlDriver\YamlDriver;
 
 use JacobJoergensen\LaravelPaper\Contracts\DriverContract;
 use JacobJoergensen\LaravelPaper\Exceptions\FileParseException;
-use Symfony\Component\Yaml;
+use Symfony\Component\Yaml\Yaml;
 
 final readonly class YamlDriver implements DriverContract
 {
