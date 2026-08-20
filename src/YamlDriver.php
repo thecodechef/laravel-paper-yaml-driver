@@ -22,7 +22,7 @@ final readonly class YamlDriver implements DriverContract
         if ($content === false) {
             throw FileParseException::unreadable($filepath);
         }
-        $data = Yaml::parseFile($content);
+        $data = Yaml::dump($content, 2, 2);
 
         return is_array($data) ? $data : [];
     }
@@ -31,6 +31,6 @@ final readonly class YamlDriver implements DriverContract
     {
         unset($data['slug']);
 
-        return Yaml::dump($data);
+        return Yaml::parse($data);
     }
 }
