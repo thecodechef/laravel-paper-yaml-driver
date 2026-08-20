@@ -48,6 +48,9 @@
     },
     "scripts": {
         "post-autoload-dump": [
+          "@prepare"
+        ],
+        "prepare" : [
           "@test"
         ],
         "lint": [
