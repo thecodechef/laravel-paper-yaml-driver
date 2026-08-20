@@ -82,7 +82,7 @@
             "@lint:check",
             "@test:types",
             "@test:unit"
-        ],
+        ]
     },
     "extra": {
         "laravel": {
