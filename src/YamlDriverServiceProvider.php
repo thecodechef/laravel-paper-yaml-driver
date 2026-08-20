@@ -15,7 +15,6 @@ class YamlDriverServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-paper-yaml-driver.php', 'laravel-paper-yaml-driver');
-
         $this->app->singleton(YamlDriver::class);
     }
 
@@ -24,15 +23,12 @@ class YamlDriverServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
         if (! $this->app->runningInConsole()) {
             return;
         }
-
         $this->publishes([
             __DIR__.'/../config/laravel-paper-yaml-driver.php' => config_path('laravel-paper-yaml-driver.php'),
         ], ['laravel-paper-yaml-driver', 'laravel-paper-yaml-driver-config']);
-
         $this->commands([
             YamlDriverCommand::class,
         ]);

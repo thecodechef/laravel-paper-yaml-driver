@@ -22,11 +22,9 @@ final readonly class YamlDriver implements DriverContract
         if ($content === false) {
             throw FileParseException::unreadable($filepath);
         }
-
         $data = Yaml::parseFile($content);
 
         return is_array($data) ? $data : [];
-
     }
 
     public function serialize(array $data): string
