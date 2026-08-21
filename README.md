@@ -17,7 +17,7 @@ A YAML Driver for Laravel Paper
 You can install the package via Composer:
 
 ```bash
-composer require thecodechef/laravel-paper-yaml-driver
+composer require --dev thecodechef/laravel-paper-yaml-driver:dev-main
 ```
 
 You may publish all of the package's resources at once:
