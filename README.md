@@ -34,34 +34,90 @@ Or, you may publish each resource individually:
 php artisan vendor:publish --tag="laravel-paper-yaml-driver-config"
 ```
 
-### Publishing and Running the Migrations
-
-```bash
-php artisan vendor:publish --tag="laravel-paper-yaml-driver-migrations"
-php artisan migrate
-```
-
-### Publishing the Views
-
-```bash
-php artisan vendor:publish --tag="laravel-paper-yaml-driver-views"
-```
-
-### Publishing the Translations
-
-```bash
-php artisan vendor:publish --tag="laravel-paper-yaml-driver-lang"
-```
-
-### Publishing the Public Assets
-
-```bash
-php artisan vendor:publish --tag="laravel-paper-yaml-driver-assets"
-```
 
 ## Usage
 
-<!-- Add a basic usage example here. -->
+```php
+# app/Providers/AppServiceProviders.php
+
+use JacobJoergensen\LaravelPaper\Drivers\DriverRegistry;
+use LaravelPaper\YamlDriver\YamlDriver; 
+
+# ...
+
+public function boot(): void
+{
+    app(DriverRegistry::class)->register('yaml', YamlDriver::class);
+}
+```
+
+```php
+<?php
+
+# app/Models/Post.php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use JacobJoergensen\LaravelPaper\Attributes\ContentPath;
+use JacobJoergensen\LaravelPaper\Attributes\Driver;
+use JacobJoergensen\LaravelPaper\Attributes\Timestamps;
+use JacobJoergensen\LaravelPaper\Paper;
+
+#[Driver('yaml')]
+#[ContentPath('content/users')]
+#[Timestamps]
+class Post extends Model
+{
+    use Paper;
+}
+```
+
+```yaml
+# content/first-post.ya?ml
+
+id: 1
+title: First Post
+author: Jeremy Bolding
+draft: true
+tags:
+  - laravel-paper
+  - yaml
+categories:
+  - php
+  - laravel
+content: |
+  this is my first post
+```
+
+```blade
+{{-- resources/views/posts/list.blade.php --}}
+
+@php
+    $posts = \App\Models\Post::all();
+@endphp
+<div class="posts">
+    @foreach($posts as $post)
+        <a href="{{ $post->permalink }}" class="post">
+            <span class="post-title">{{ $post->title }}</span>
+            <span class="post-author">By: {{ $post->author }}</span>
+            <span class="post-date">{{ $post->updated_at ? "Updated: $post->updated_at" : "Posted: $post->created_at" }}</span>
+            <div class="post-tags">
+                @foreach($post->tags as $tag)
+                    <span class="post-tag">{{ $tag }}</span>
+                @endforeach
+            </div>
+            <div class="post-categories">
+                @foreach($post->categories as $category)
+                    <span class="post-category">{{ $category }}</span>
+                @endforeach
+            </div>
+            <span class="post-date">Posted: {{ $post->created_at }}</span>
+            <span class="post-summary">{{ Str::limit($post->content, 30), '...' }}</span>
+        </a>
+    @endforeach
+</div>
+```
 
 ## Changelog
 
