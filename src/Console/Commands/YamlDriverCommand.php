@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LaravelPaperYamlDriver\YamlDriver\Console\Commands;
+namespace LaravelPaper\YamlDriver\Console\Commands;
 
 use Illuminate\Console\Command;
 
