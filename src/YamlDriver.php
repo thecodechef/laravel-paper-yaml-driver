@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LaravelPaperYamlDriver\YamlDriver;
+namespace LaravelPaper\YamlDriver;
 
 use JacobJoergensen\LaravelPaper\Contracts\DriverContract;
 use JacobJoergensen\LaravelPaper\Exceptions\FileParseException;
