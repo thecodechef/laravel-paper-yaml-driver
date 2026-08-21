@@ -39,15 +39,11 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelPaperYamlDriver\\YamlDriver\\": "src/"
+            "LaravelPaper\\YamlDriver\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LaravelPaperYamlDriver\\YamlDriver\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     },
     "scripts": {
@@ -67,11 +63,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelPaperYamlDriver\\YamlDriver\\YamlDriverServiceProvider"
-            ],
-            "aliases": {
-                "YamlDriver": "LaravelPaperYamlDriver\\YamlDriver\\Facades\\YamlDriver"
-            }
+                "LaravelPaper\\YamlDriver\\YamlDriverServiceProvider"
+            ]
         }
     },
     "config": {
