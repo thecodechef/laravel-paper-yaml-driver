@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LaravelPaperYamlDriver\YamlDriver;
+namespace LaravelPaper\YamlDriver;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelPaperYamlDriver\YamlDriver\Console\Commands\YamlDriverCommand;
+use LaravelPaper\YamlDriver\Console\Commands\YamlDriverCommand;
 
 class YamlDriverServiceProvider extends ServiceProvider
 {
