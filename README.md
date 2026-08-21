@@ -113,7 +113,7 @@ content: |
                 @endforeach
             </div>
             <span class="post-date">Posted: {{ $post->created_at }}</span>
-            <span class="post-summary">{{ Str::limit($post->content, 30), '...' }}</span>
+            <span class="post-summary">{{ Str::limit($post->content, 30, '...') }}</span>
         </a>
     @endforeach
 </div>
